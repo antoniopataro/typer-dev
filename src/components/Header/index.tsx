@@ -24,10 +24,10 @@ function Header() {
         </a>
       </nav>
       <nav>
-        <Link to="/signup" id="singup">
+        <Link to="/typer-dev/signup" id="singup">
           <h3>Sign Up</h3>
         </Link>
-        <Link to="/login" id="login">
+        <Link to="/typer-dev/login" id="login">
           <h3>Login</h3>
           <img src={leftArrowWhite} alt="" width={12} />
         </Link>

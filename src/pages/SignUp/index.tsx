@@ -23,7 +23,7 @@ function SignUp() {
         password: password.current?.value,
       };
 
-      navigate("/login");
+      navigate("/typer-dev/login");
       return;
     }
     return;
@@ -61,7 +61,7 @@ function SignUp() {
 
   return (
     <SignUpStyles>
-      <Link to="/">
+      <Link to="/typer-dev/">
         <img src={leftArrowPurple} alt="Return" width={15} />
         <h4 className="primary-color">Back</h4>
       </Link>
@@ -98,7 +98,7 @@ function SignUp() {
           <span>{passwordError ? passwordError : ""}</span>
         </div>
         <button type="submit">Sign Up</button>
-        <Link to="/login">Log in with existing account.</Link>
+        <Link to="/typer-dev/login">Log in with existing account.</Link>
       </form>
     </SignUpStyles>
   );

@@ -15,7 +15,7 @@ function Login() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    validateInput() ? navigate("/") : null;
+    validateInput() ? navigate("/typer-dev/") : null;
   }
 
   const validateInput = () => {
@@ -45,7 +45,7 @@ function Login() {
 
   return (
     <LoginStyles>
-      <Link to="/">
+      <Link to="/typer-dev/">
         <img src={leftArrowPurple} alt="Return" width={15} />
         <h4 className="primary-color">Back</h4>
       </Link>
@@ -72,7 +72,7 @@ function Login() {
           <span>{passwordError ? passwordError : ""}</span>
         </div>
         <button type="submit">Login</button>
-        <Link to="/signup">Create an account.</Link>
+        <Link to="/typer-dev/signup">Create an account.</Link>
       </form>
     </LoginStyles>
   );
