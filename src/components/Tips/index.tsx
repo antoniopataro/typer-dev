@@ -29,7 +29,11 @@ function Tips() {
               Mechanical keyboards are usually better.
             </h4>
           </div>
-          <a href="" className="secondary-color">
+          <a
+            href="https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard"
+            target={"_blank"}
+            className="secondary-color"
+          >
             Recommended Keyboard <img src={diagonalArrowPink} alt="" className="diagonalArrow" />
           </a>
         </li>
@@ -59,7 +63,11 @@ function Tips() {
               programming, since a small error can screw everything up.
             </h4>
           </div>
-          <a href="" className="secondary-color">
+          <a
+            href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"
+            target={"_blank"}
+            className="secondary-color"
+          >
             Spell Checker for VSCode <img src={diagonalArrowPink} alt="" className="diagonalArrow" />
           </a>
         </li>
