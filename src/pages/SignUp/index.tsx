@@ -24,16 +24,12 @@ function SignUp() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    const userName = name || "";
-    const userEmail = email || "";
-    const userPassword = password || "";
-
     if (validateInput()) {
       await createUser({
         variables: {
-          name: userName,
-          email: userEmail,
-          password: userPassword,
+          name: name,
+          email: email,
+          password: password,
         },
       });
 
@@ -44,23 +40,19 @@ function SignUp() {
   }
 
   const validateInput = () => {
-    const userName = name;
-    const userEmail = email;
-    const userPassword = password;
-
-    if (userName!.length === 0) {
+    if (name.length === 0) {
       setNameError("You must type in your name.");
       return false;
     }
     setNameError("");
 
-    if (!userEmail!.includes("@") || !userEmail!.includes(".")) {
+    if (!email.includes("@") || !email.includes(".")) {
       setEmailError("Your e-mail must have '@' and '.'.");
       return false;
     }
     setEmailError("");
 
-    if (userPassword!.length < 8) {
+    if (password.length < 8) {
       setPasswordError("Your password must have at least 8 characters.");
       return false;
     }

@@ -17,11 +17,9 @@ function Login() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  const userEmail = email || "";
-
   const { data } = useGetUserQuery({
     variables: {
-      email: userEmail,
+      email: email,
     },
   });
 
@@ -34,15 +32,13 @@ function Login() {
   }
 
   const authenticateUser = () => {
-    const userPassword = password;
-
     if (!data?.userData?.email) {
       setEmailError("Are you sure about this e-mail?");
       return false;
     }
     setEmailError("");
 
-    if (data?.userData?.password !== userPassword) {
+    if (data?.userData?.password !== password) {
       setPasswordError("Incorrect password.");
       return false;
     }
