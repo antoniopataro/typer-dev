@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
@@ -11,6 +11,10 @@ import SignUpStyles from "./styles";
 function SignUp() {
   const navigate = useNavigate();
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
@@ -20,9 +24,9 @@ function SignUp() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    const userName = name.current?.value || "";
-    const userEmail = email.current?.value || "";
-    const userPassword = password.current?.value || "";
+    const userName = name || "";
+    const userEmail = email || "";
+    const userPassword = password || "";
 
     if (validateInput()) {
       await createUser({
@@ -40,9 +44,9 @@ function SignUp() {
   }
 
   const validateInput = () => {
-    const userName = name.current?.value;
-    const userEmail = email.current?.value;
-    const userPassword = password.current?.value;
+    const userName = name;
+    const userEmail = email;
+    const userPassword = password;
 
     if (userName!.length === 0) {
       setNameError("You must type in your name.");
@@ -65,10 +69,6 @@ function SignUp() {
     return true;
   };
 
-  const name = useRef<HTMLInputElement>(null);
-  const email = useRef<HTMLInputElement>(null);
-  const password = useRef<HTMLInputElement>(null);
-
   return (
     <SignUpStyles>
       <Link to="/typer-dev/">
@@ -79,7 +79,7 @@ function SignUp() {
       <form onSubmit={handleSubmit} noValidate>
         <div>
           <input
-            ref={name}
+            onChange={(e) => setName(e.target.value)}
             type="name"
             placeholder="Your name."
             autoComplete="name"
@@ -89,7 +89,7 @@ function SignUp() {
         </div>
         <div>
           <input
-            ref={email}
+            onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Your e-mail."
             autoComplete="email"
@@ -99,7 +99,7 @@ function SignUp() {
         </div>
         <div>
           <input
-            ref={password}
+            onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Your password."
             autoComplete="current-password"

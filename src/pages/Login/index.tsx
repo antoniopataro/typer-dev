@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
@@ -11,13 +11,13 @@ import LoginStyles from "./styles";
 function Login() {
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  const email = useRef<HTMLInputElement>(null);
-  const password = useRef<HTMLInputElement>(null);
-
-  const userEmail = email.current?.value || "";
+  const userEmail = email || "";
 
   const { data } = useGetUserQuery({
     variables: {
@@ -34,7 +34,7 @@ function Login() {
   }
 
   const authenticateUser = () => {
-    const userPassword = password.current?.value;
+    const userPassword = password;
 
     if (!data?.userData?.email) {
       setEmailError("Are you sure about this e-mail?");
@@ -61,7 +61,7 @@ function Login() {
       <form onSubmit={handleSubmit} noValidate>
         <div>
           <input
-            ref={email}
+            onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Your account's e-mail."
             autoComplete="email"
@@ -71,7 +71,7 @@ function Login() {
         </div>
         <div>
           <input
-            ref={password}
+            onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Your account's password."
             autoComplete="password"
