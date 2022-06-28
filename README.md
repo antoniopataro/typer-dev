@@ -17,3 +17,7 @@ Still gotta fix somethings: random development keywords-content for the typer, a
 - `ReactJS`, which includes `HTML`, `CSS` and `Javascript`;
 - `react-router-dom`, for routing;
 - `styled-components`, CSS in JS.
+
+- [NEW] GraphCMS with `GraphQL` and `Apollo Client`;
+
+ Implemented [GraphCMS](https://graphcms.com/), which is a headless low-code API. It needed `GraphQL` for writing queries/mutations and `Apollo Client`.
