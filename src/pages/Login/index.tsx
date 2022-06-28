@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
+import { useGetUserQuery } from "../../graphql/generated";
+
 import leftArrowPurple from "../../assets/leftArrowPurple.svg";
 
 import LoginStyles from "./styles";
@@ -12,36 +14,42 @@ function Login() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
+  const email = useRef<HTMLInputElement>(null);
+  const password = useRef<HTMLInputElement>(null);
+
+  const userEmail = email.current?.value || "";
+
+  const { data } = useGetUserQuery({
+    variables: {
+      email: userEmail,
+    },
+  });
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    validateInput() ? navigate("/typer-dev/") : null;
+    authenticateUser();
+
+    authenticateUser() ? navigate("/typer-dev/") : null;
   }
 
-  const validateInput = () => {
-    const userEmail = email.current?.value;
+  const authenticateUser = () => {
     const userPassword = password.current?.value;
 
-    const indexOfAt = userEmail?.split("").indexOf("@");
-    const afterAt = userEmail?.slice(indexOfAt, userEmail.length);
-
-    if (!userEmail!.includes("@") || !afterAt!.includes(".")) {
-      setEmailError("Your e-mail must have '@' and '.'.");
+    if (!data?.userData?.email) {
+      setEmailError("Are you sure about this e-mail?");
       return false;
     }
     setEmailError("");
 
-    if (userPassword!.length < 8) {
-      setPasswordError("Your password must have at least 8 characters.");
+    if (data?.userData?.password !== userPassword) {
+      setPasswordError("Incorrect password.");
       return false;
     }
     setPasswordError("");
 
     return true;
   };
-
-  const email = useRef<HTMLInputElement>(null);
-  const password = useRef<HTMLInputElement>(null);
 
   return (
     <LoginStyles>

@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
+
+import { useCreateUserMutation } from "../../graphql/generated";
 
 import leftArrowPurple from "../../assets/leftArrowPurple.svg";
 
@@ -13,15 +15,23 @@ function SignUp() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  function handleSubmit(e: React.FormEvent) {
+  const [createUser] = useCreateUserMutation();
+
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
+    const userName = name.current?.value || "";
+    const userEmail = email.current?.value || "";
+    const userPassword = password.current?.value || "";
+
     if (validateInput()) {
-      const userInfo = {
-        name: name.current?.value,
-        email: email.current?.value,
-        password: password.current?.value,
-      };
+      await createUser({
+        variables: {
+          name: userName,
+          email: userEmail,
+          password: userPassword,
+        },
+      });
 
       navigate("/typer-dev/login");
       return;
