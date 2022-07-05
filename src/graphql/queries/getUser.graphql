@@ -1,8 +1,0 @@
-query GetUser($email: String!) {
-  userData(where: { email: $email }, stage: DRAFT) {
-    email
-    name
-    password
-    id
-  }
-}
