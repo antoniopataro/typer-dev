@@ -1,4 +1,3 @@
-require("dotenv").config();
 require("./config/dbConfig");
 
 const express = require("express");
@@ -16,4 +15,5 @@ app.use("/", (req, res) => {
   res.send({ status: "App is running!" });
 });
 
-app.listen(process.env.PORT || process.env.SERVER_PORT);
+require("dotenv").config();
+app.listen(process.env.SERVER_PORT);
