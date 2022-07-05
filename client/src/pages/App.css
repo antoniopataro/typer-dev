@@ -28,22 +28,22 @@ body {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: clamp(36px, 4vw, 48px);
   font-weight: 700;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: clamp(16px, 2vw, 24px);
   font-weight: 700;
 }
 
 h3 {
-  font-size: 16px;
+  font-size: clamp(14px, 1.115vw, 18px);
   font-weight: 600;
 }
 
 h4 {
-  font-size: 16px;
+  font-size: clamp(14px, 1.115vw, 18px);
   font-weight: 500;
   color: var(--text);
 }

@@ -16,6 +16,11 @@ const FeedbackStyles = styled.section`
 
   text-align: center;
 
+  @media (max-width: 960px) {
+    padding-top: 50px;
+    padding-bottom: 75px;
+  }
+
   header {
     display: flex;
     flex-direction: column;
@@ -62,6 +67,17 @@ const FeedbackStyles = styled.section`
 
     transition: 0.15s ease;
     transition-property: color;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      background-color: transparent;
+
+      padding: 0;
+
+      button {
+        border-radius: 4px;
+      }
+    }
 
     button {
       border: none;

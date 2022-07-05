@@ -14,6 +14,12 @@ const TipsStyles = styled.section`
   padding-top: 100px;
   padding-bottom: 150px;
 
+  @media (max-width: 960px) {
+    gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 75px;
+  }
+
   header {
     display: flex;
     flex-direction: column;
@@ -29,12 +35,12 @@ const TipsStyles = styled.section`
 
       display: flex;
 
+      width: 100%;
+
       align-items: center;
       justify-content: center;
 
-      position: relative;
-
-      width: 100%;
+      text-align: center;
 
       .title-indicator {
         position: absolute;
@@ -51,6 +57,11 @@ const TipsStyles = styled.section`
     height: 250px;
 
     gap: 50px;
+
+    @media (max-width: 960px) {
+      height: fit-content;
+      flex-direction: column;
+    }
 
     li {
       display: flex;

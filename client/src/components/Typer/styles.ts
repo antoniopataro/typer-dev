@@ -14,15 +14,17 @@ const TyperStyles = styled.section`
 
   text-align: center;
 
-  h1 {
-    padding: 0 100px;
+  @media (max-width: 960px) {
+    gap: 75px;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 
   #typer-container {
     display: flex;
     flex-direction: column;
 
-    width: 450px;
+    max-width: 60vw;
 
     align-items: center;
 
@@ -40,11 +42,25 @@ const TyperStyles = styled.section`
       align-items: center;
       justify-content: space-between;
 
+      @media (max-width: 626px) {
+        flex-direction: column;
+
+        gap: 10px;
+      }
+
       div {
         display: flex;
         flex-direction: row;
 
+        align-items: center;
+
         gap: 20px;
+
+        @media (max-width: 626px) {
+          flex-direction: column;
+
+          gap: 10px;
+        }
       }
 
       span {
@@ -56,14 +72,15 @@ const TyperStyles = styled.section`
     #typer-box {
       text-align: left;
 
-      width: 100%;
+      max-width: 450px;
       min-height: 200px;
+
       height: fit-content;
 
       padding: 20px;
 
       font-family: "Fira Code", sans-serif;
-      font-size: 16px;
+      font-size: clamp(14px, 1.115vw, 18px);
       font-weight: 500;
 
       resize: none;

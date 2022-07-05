@@ -29,12 +29,9 @@ function Tips() {
               Mechanical keyboards are usually better.
             </h4>
           </div>
-          <a
-            href="https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard"
-            target={"_blank"}
-            className="secondary-color"
-          >
-            Recommended Keyboard <img src={diagonalArrowPink} alt="" className="diagonalArrow" />
+          <a href="https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard" target={"_blank"}>
+            <h3 className="secondary-color">Recommended Keyboard </h3>
+            <img src={diagonalArrowPink} alt="" className="diagonalArrow" />
           </a>
         </li>
         <li>
@@ -48,8 +45,9 @@ function Tips() {
               your evolution.
             </h4>
           </div>
-          <a href="#typer" className="primary-color">
-            Start training <img src={upArrowPurple} alt="" width={10} className="upArrow" />
+          <a href="#typer">
+            <h3 className="primary-color">Start training </h3>
+            <img src={upArrowPurple} alt="" width={10} className="upArrow" />
           </a>
         </li>
         <li>
@@ -66,9 +64,9 @@ function Tips() {
           <a
             href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"
             target={"_blank"}
-            className="secondary-color"
           >
-            Spell Checker for VSCode <img src={diagonalArrowPink} alt="" className="diagonalArrow" />
+            <h3 className="secondary-color">Spell Checker for VSCode</h3>{" "}
+            <img src={diagonalArrowPink} alt="" className="diagonalArrow" />
           </a>
         </li>
       </ul>

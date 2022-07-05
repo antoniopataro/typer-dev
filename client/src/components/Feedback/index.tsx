@@ -26,9 +26,11 @@ function Feedback() {
 
       <div id="email">
         <span style={copiedEmail ? { color: "var(--primary)" } : { color: "var(--text)" }}>
-          antoniopatarodev@gmail.com
+          <h3>antoniopatarodev@gmail.com</h3>
         </span>
-        <button onClick={handleCopyEmail}>Copy E-mail</button>
+        <button onClick={handleCopyEmail}>
+          <h3>Copy E-mail</h3>
+        </button>
       </div>
     </FeedbackStyles>
   );

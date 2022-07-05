@@ -15,6 +15,12 @@ const AppStyles = styled.main`
   min-height: 100vh;
 
   align-items: center;
+
+  @media (max-width: 960px) {
+    .title-indicator {
+      display: none;
+    }
+  }
 `;
 
 import "./App.css";

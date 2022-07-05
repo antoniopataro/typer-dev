@@ -133,12 +133,8 @@ const ProfileStyles = styled.main`
         background-color: #eaeaeb;
       }
 
-      tbody tr td h4 {
-        text-align: left;
-
-        padding: 0 50px;
-
-        overflow: hidden;
+      tbody td {
+        padding: 4px 8px;
       }
 
       th,

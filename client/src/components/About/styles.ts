@@ -16,6 +16,11 @@ const AboutStyles = styled.section`
 
   text-align: center;
 
+  @media (max-width: 960px) {
+    padding-top: 50px;
+    padding-bottom: 75px;
+  }
+
   header {
     display: flex;
     flex-direction: column;

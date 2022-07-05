@@ -16,7 +16,7 @@ const HeaderStyles = styled.header`
 
     align-items: center;
 
-    gap: 20px;
+    gap: 10px;
   }
 
   nav {
@@ -26,6 +26,10 @@ const HeaderStyles = styled.header`
     align-items: center;
 
     gap: 20px;
+
+    @media (max-width: 735px) {
+      display: none;
+    }
 
     a {
       text-decoration: none;
@@ -65,6 +69,10 @@ const HeaderStyles = styled.header`
 
       transition: 0.15s ease;
       transition-property: color;
+
+      @media (max-width: 375px) {
+        display: none;
+      }
     }
 
     img {
