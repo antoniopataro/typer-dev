@@ -114,7 +114,7 @@ function Typer() {
 
   const handleTimer = useEffect(() => {
     if (isActive && timer > 0) {
-      setTimeout(() => setTimer((prev) => prev - 1), 10);
+      setTimeout(() => setTimer((prev) => prev - 1), 12.8125);
       setIsClear(false);
     }
 
