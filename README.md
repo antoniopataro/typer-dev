@@ -16,7 +16,7 @@ Styled the project using `styled-components` and created its routes using `react
 
 It's the first project I handmade the Back-End logic using the MERN stack: `MongoDB`, `Express`, `ReactJS` and `NodeJS`.
 
-Used `axios` to increase productivity when it comes down to fetching data, `bcrypt` to encrpt data and `Mongoose` as ORM.
+Used `axios` to increase productivity when it comes down to fetching data, `bcrypt` to encrpt data and `mongoose` as ORM.
 
 <div style="display: inline_block"><br>
   <img align="center" title="ReactJS" alt="ReactJS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
