@@ -20,7 +20,7 @@ It still needs an API with programming related keywords though, but it works acc
 - `mongoose` [↗](https://mongoosejs.com/) as ORM
 - `react-router-dom` [↗](https://v5.reactrouter.com/) to manage routing
 - `axios` [↗](https://v5.reactrouter.com/) to facilitate requests
-- `bycript` [↗](https://github.com/kelektiv/node.bcrypt.js) to encrypt data
+- `bcript` [↗](https://github.com/kelektiv/node.bcrypt.js) to encrypt data
 
 <div style="display: inline_block" align="center"><br>
   <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank">
