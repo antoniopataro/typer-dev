@@ -23,6 +23,8 @@ It still needs an API with programming related keywords though, but it works acc
 - `bcript` [↗](https://github.com/kelektiv/node.bcrypt.js) to encrypt data
 
 <div style="display: inline_block" align="center"><br>
+    <a href="https://vitejs.dev/" target="_blank">
+      <img align="center" title="ViteJS" alt="ViteJS" height="45" width="40" src="https://user-images.githubusercontent.com/87823281/182053707-047fc95d-6891-427b-9a98-065b20a25a30.svg"></a>
   <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank">
   <img align="center" title="Javascript" alt="Javascript" height="45" width="40" src="https://user-images.githubusercontent.com/87823281/181045156-87c8d141-3767-48bf-a2b5-3d882f308bb1.svg"></a>
   <a href="https://www.typescriptlang.org/" target="_blank">
